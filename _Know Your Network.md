@@ -1,5 +1,5 @@
 
-<!-- Your monitor number = #$34T# -->
+<!-- Your monitor number = 51 -->
 
 
 # 👋 Welcome to Rivan
@@ -43,8 +43,8 @@ Import the repositories.
 ~~~
 @cmd
 cd Desktop
-mkdir _name-#$34T#
-cd _name-#$34T#
+mkdir _name-51
+cd _name-51
 dir
 ~~~
 
@@ -300,7 +300,7 @@ __First 5 - H.E.S.No__
 ~~~
 !@CoreTAAS
 conf t
- Hostname CoreTAAS-#$34T#
+ Hostname CoreTAAS-51
  Enable secret pass
  Service password-encryption
  No logging console
@@ -336,7 +336,7 @@ conf t
 !@CoreTAAS
 conf t
  int vlan 1
-  ip add 10.#$34T#.1.2 255.255.255.0
+  ip add 10.51.1.2 255.255.255.0
   description DEFAULT-VLAN
   end
 ~~~
@@ -383,22 +383,22 @@ show ip int br
 Task:
  1. CoreTAAS must have the following SVIs
    - VLAN 1
-       - IP address: 10.#$34T#.1.2
+       - IP address: 10.51.1.2
        - Description: DEFAULT-VLAN
        - Status: UP
 
    - VLAN 10
-     - IP address: 10.#$34T#.10.2
+     - IP address: 10.51.10.2
      - Description: WIFI-VLAN
      - Status: UP
 
    - VLAN 50
-     - IP address: 10.#$34T#.50.2
+     - IP address: 10.51.50.2
      - Description: CCTV-VLAN
      - Status: UP
 
    - VLAN 100
-     - IP address: 10.#$34T#.100.2
+     - IP address: 10.51.100.2
      - Description: VOICE-VLAN
      - Status: UP
 
@@ -408,7 +408,7 @@ Task:
 !@CoreTAAS
 conf t
  int vlan 1
-  ip add 10.#$34T#.1.2 255.255.255.0
+  ip add 10.51.1.2 255.255.255.0
   description DEFAULT-VLAN
   no shut
   exit
@@ -446,22 +446,22 @@ conf t
 !@CoreTaas
 conf t
  int vlan 1
-  ip add 10.#$34T#.1.2 255.255.255.0
+  ip add 10.51.1.2 255.255.255.0
   description DEFAULT-VLAN
   no shut
   exit
  int vlan 10
-  ip add 10.#$34T#.10.2 255.255.255.0
+  ip add 10.51.10.2 255.255.255.0
   description WIFI-VLAN
   no shut
   exit
  int vlan 50
-  ip add 10.#$34T#.50.2 255.255.255.0
+  ip add 10.51.50.2 255.255.255.0
   description CCTV-VLAN
   no shut
   exit
  int vlan 100
-  ip add 10.#$34T#.100.2 255.255.255.0
+  ip add 10.51.100.2 255.255.255.0
   description VOICE-VLAN
   no shut
  end
@@ -479,7 +479,7 @@ conf t
 ~~~
 !@CoreTaas
 conf t
- hostname CoreTAAS-#$34T#
+ hostname CoreTAAS-51
  enable secret pass
  service password-encryption
  no logging console
@@ -494,19 +494,19 @@ conf t
   exec-timeout 0 0
  int vlan 1
   no shut
-  ip add 10.#$34T#.1.2 255.255.255.0
+  ip add 10.51.1.2 255.255.255.0
   desc DEFAULT-VLAN
  int vlan 10
   no shut
-  ip add 10.#$34T#.10.2 255.255.255.0
+  ip add 10.51.10.2 255.255.255.0
   desc WIFI-VLAN
  int vlan 50
   no shut
-  ip add 10.#$34T#.50.2 255.255.255.0
+  ip add 10.51.50.2 255.255.255.0
   desc CCTV-VLAN
  int vlan 100
   no shut
-  ip add 10.#$34T#.100.2 255.255.255.0
+  ip add 10.51.100.2 255.255.255.0
   desc VOICE-VLAN
  end
 ~~~
@@ -556,7 +556,7 @@ show power inline
 ~~~
 !@CoreBABA
 conf t
- hostname coreBaba-#$34T#
+ hostname coreBaba-51
  enable secret pass
  service password-encryption
  no logging console
@@ -572,22 +572,22 @@ conf t
  int gi 0/1
   no shut
   no switchport
-  ip add 10.#$34T#.#$34T#.4 255.255.255.0
+  ip add 10.51.51.4 255.255.255.0
  int vlan 1
   no shut
-  ip add 10.#$34T#.1.4 255.255.255.0
+  ip add 10.51.1.4 255.255.255.0
   desc DEFAULT-VLAN
  int vlan 10
   no shut
-  ip add 10.#$34T#.10.4 255.255.255.0
+  ip add 10.51.10.4 255.255.255.0
   desc WIFI-VLAN
  int vlan 50
   no shut
-  ip add 10.#$34T#.50.4 255.255.255.0
+  ip add 10.51.50.4 255.255.255.0
   desc CCTV-VLAN
  int vlan 100
   no shut
-  ip add 10.#$34T#.100.4 255.255.255.0
+  ip add 10.51.100.4 255.255.255.0
   desc VOICE-VLAN
  end
 ~~~
@@ -600,7 +600,7 @@ Verify Connectivity:
 
 ~~~
 !@cmd
-ping 10.#$34T#.1.4
+ping 10.51.1.4
 ~~~
 
 <br>
@@ -627,25 +627,25 @@ Can Windows be a DHCP Server? Yes, Server Manager.
 ~~~
 !@CoreBABA
 conf t
- ip dhcp excluded-address 10.#$34T#.1.1 10.#$34T#.1.100
- ip dhcp excluded-address 10.#$34T#.10.1 10.#$34T#.10.100
- ip dhcp excluded-address 10.#$34T#.50.1 10.#$34T#.50.100
+ ip dhcp excluded-address 10.51.1.1 10.51.1.100
+ ip dhcp excluded-address 10.51.10.1 10.51.10.100
+ ip dhcp excluded-address 10.51.50.1 10.51.50.100
  ip dhcp pool POOLDATA
-  network 10.#$34T#.1.0 255.255.255.0
-  default-router 10.#$34T#.1.4
+  network 10.51.1.0 255.255.255.0
+  default-router 10.51.1.4
   domain-name MGMTDATA.COM
-  dns-server 10.#$34T#.1.10
+  dns-server 10.51.1.10
  ip dhcp pool POOLWIFI
-  network 10.#$34T#.10.0 255.255.255.0
-  default-router 10.#$34T#.10.4
+  network 10.51.10.0 255.255.255.0
+  default-router 10.51.10.4
   domain-name WIFIDATA.COM
-  dns-server 10.#$34T#.1.10
-  option 43 ip 10.#$34T#.10.#$34T#
+  dns-server 10.51.1.10
+  option 43 ip 10.51.10.51
  ip dhcp pool POOLCCTV
-  network 10.#$34T#.50.0 255.255.255.0
-  default-router 10.#$34T#.50.4
+  network 10.51.50.0 255.255.255.0
+  default-router 10.51.50.4
   domain-name CCTVDATA.COM
-  dns-server 10.#$34T#.1.10
+  dns-server 10.51.1.10
   exit
 ~~~
 
@@ -690,11 +690,11 @@ Task:
 conf t
  ip dhcp excluded-address __.__.__.__  __.__.__.__
  ip dhcp pool ______
-  network 10.#$34T#.50.0 255.255.255.0
+  network 10.51.50.0 255.255.255.0
   default-______  ______
   ______  ______
   ______  
-  option ___  ip 10.#$34T#.__.__
+  option ___  ip 10.51.__.__
   lease 5 0 0
   end
 ~~~
@@ -710,13 +710,13 @@ conf t
 ~~~
 !@CoreBABA
 conf t
- ip dhcp excluded-address 10.#$34T#.100.1 10.#$34T#.100.100
+ ip dhcp excluded-address 10.51.100.1 10.51.100.100
  ip dhcp pool POOLVOICE
-  network 10.#$34T#.100.0 255.255.255.0
-  default-router 10.#$34T#.100.4
+  network 10.51.100.0 255.255.255.0
+  default-router 10.51.100.4
   domain-name VOICEDATA.COM
-  dns-server 10.#$34T#.1.10
-  option 150 ip 10.#$34T#.100.8
+  dns-server 10.51.1.10
+  option 150 ip 10.51.100.8
   lease 5 0 0
   end
 ~~~
@@ -883,10 +883,10 @@ Assign a specific IP address to a device.
 conf t
  ip routing
  ip dhcp pool CAMERA6
-  host 10.#$34T#.50.6 255.255.255.0
+  host 10.51.50.6 255.255.255.0
   client-identifier #camera6macadd#
  ip dhcp pool CAMERA8
-  host 10.#$34T#.50.8 255.255.255.0
+  host 10.51.50.8 255.255.255.0
   client-identifier #camera8macadd#
  end
 ~~~
@@ -945,7 +945,7 @@ Review the jobs of a switch:
 ~~~
 !@coreBaba
 conf t
- hostname coreBaba-#$34T#
+ hostname coreBaba-51
  enable secret pass
  service password-encryption
  no logging console
@@ -961,56 +961,56 @@ conf t
  int gi 0/1
   no shut
   no switchport
-  ip add 10.#$34T#.#$34T#.4 255.255.255.0
+  ip add 10.51.51.4 255.255.255.0
  int vlan 1
   no shut
-  ip add 10.#$34T#.1.4 255.255.255.0
+  ip add 10.51.1.4 255.255.255.0
   desc VLANMGMTDATA
  int vlan 10
   no shut
-  ip add 10.#$34T#.10.4 255.255.255.0
+  ip add 10.51.10.4 255.255.255.0
   desc VLANMGMTWIFI
  int vlan 50
   no shut
-  ip add 10.#$34T#.50.4 255.255.255.0
+  ip add 10.51.50.4 255.255.255.0
   desc VLANMGMTCCTV
  int vlan 100
   no shut
-  ip add 10.#$34T#.100.4 255.255.255.0
+  ip add 10.51.100.4 255.255.255.0
   desc VLANMGMTVOICE
  end
 
 !@dhcp
 conf t
- ip dhcp excluded-add 10.#$34T#.1.1 10.#$34T#.1.100
- ip dhcp excluded-add 10.#$34T#.10.1 10.#$34T#.10.100
- ip dhcp excluded-add 10.#$34T#.50.1 10.#$34T#.50.100
- ip dhcp excluded-add 10.#$34T#.100.1 10.#$34T#.100.100
+ ip dhcp excluded-add 10.51.1.1 10.51.1.100
+ ip dhcp excluded-add 10.51.10.1 10.51.10.100
+ ip dhcp excluded-add 10.51.50.1 10.51.50.100
+ ip dhcp excluded-add 10.51.100.1 10.51.100.100
  ip dhcp pool POOLDATA
-  network 10.#$34T#.1.0 255.255.255.0
-  default-router 10.#$34T#.1.4
+  network 10.51.1.0 255.255.255.0
+  default-router 10.51.1.4
   domain-name MGMTDATA.COM
-  dns-server 10.#$34T#.1.10
+  dns-server 10.51.1.10
   exit
  ip dhcp pool POOLWIFI
-  network 10.#$34T#.10.0 255.255.255.0
-  default-router 10.#$34T#.10.4
+  network 10.51.10.0 255.255.255.0
+  default-router 10.51.10.4
   domain-name WIFIDATA.COM
-  dns-server 10.#$34T#.1.10
-  option 43 ip 10.#$34T#.10.#$34T#
+  dns-server 10.51.1.10
+  option 43 ip 10.51.10.51
   exit
  ip dhcp pool POOLCCTV
-  network 10.#$34T#.50.0 255.255.255.0
-  default-router 10.#$34T#.50.4
+  network 10.51.50.0 255.255.255.0
+  default-router 10.51.50.4
   domain-name CCTVDATA.COM
-  dns-server 10.#$34T#.1.10
+  dns-server 10.51.1.10
   exit
  ip dhcp pool POOLVOICE
-  network 10.#$34T#.100.0 255.255.255.0
-  default-router 10.#$34T#.100.4
+  network 10.51.100.0 255.255.255.0
+  default-router 10.51.100.4
   domain-name VOICEDATA.COM
-  dns-server 10.#$34T#.1.10
-  option 150 ip 10.#$34T#.100.8
+  dns-server 10.51.1.10
+  option 150 ip 10.51.100.8
   exit
 
 !@switchport
@@ -1054,10 +1054,10 @@ conf t
 conf t
  ip routing
  ip dhcp pool CAMERA6
-  host 10.#$34T#.50.6 255.255.255.0
+  host 10.51.50.6 255.255.255.0
   client-identifier #camera6macadd#
  ip dhcp pool CAMERA8
-  host 10.#$34T#.50.8 255.255.255.0
+  host 10.51.50.8 255.255.255.0
   client-identifier #camera8macadd#
  end
 ~~~
@@ -1074,8 +1074,8 @@ conf t
 Access the CoreSwitches without the console cable.
 ~~~
 @cmd
-ping 10.#$34T#.1.2
-ping 10.#$34T#.1.4
+ping 10.51.1.2
+ping 10.51.1.4
 ~~~
 
 &nbsp;
@@ -1085,8 +1085,8 @@ ping 10.#$34T#.1.4
 When a device is pingable you can scan it.
 ~~~
 @cmd
-nmap -v 10.#$34T#.1.2
-nmap -v 10.#$34T#.1.4
+nmap -v 10.51.1.2
+nmap -v 10.51.1.4
 ~~~
 
 Is port 23 open?
@@ -1106,7 +1106,7 @@ Enter port 23 via __SecureCRT__
 ~~~
 !@CUCM
 conf t
- hostname CUCM-#$34T#
+ hostname CUCM-51
  enable secret pass
  service password-encryption
  no logging console
@@ -1121,7 +1121,7 @@ conf t
   exec-timeout 0 0
  int fa 0/0
   no shut
-  ip add 10.#$34T#.100.8 255.255.255.0
+  ip add 10.51.100.8 255.255.255.0
  end
 ~~~
 
@@ -1143,16 +1143,16 @@ conf t
 !@CUCM
 conf t
  dial-peer voice 1 pots
-  destination-pattern #$34T#00
+  destination-pattern 5100
   port 0/0/0
  dial-peer voice 2 pots
-  destination-pattern #$34T#01
+  destination-pattern 5101
   port 0/0/1
  dial-peer voice 3 pots
-  destination-pattern #$34T#02
+  destination-pattern 5102
   port 0/0/2
  dial-peer voice 4 pots
-  destination-pattern #$34T#03
+  destination-pattern 5103
   port 0/0/3
  end
 ~~~
@@ -1164,7 +1164,7 @@ Verify Functionality:
 ~~~
 !@CUCM
 show dial-peer voice summary     !SDVS
-csim start #$34T#00
+csim start 5100
 ~~~
 
 &nbsp;
@@ -1201,13 +1201,13 @@ conf t
   no auto-reg-ephone
   max-ephones 5
   max-dn 20
-  ip source-address 10.#$34T#.100.8 port 2000
+  ip source-address 10.51.100.8 port 2000
   end
 ~~~
 
 <br>
 
-*Why 10.#$34T#.100.8? __TFTP__*
+*Why 10.51.100.8? __TFTP__*
 
 &nbsp;
 ---
@@ -1224,23 +1224,23 @@ Ephone 2 MAC: #ephone1macadd#
 !@CUCM
 conf t
  ephone-dn 1
-  number #$34T#11
+  number 5111
  ephone-dn 2
-  number #$34T#22
+  number 5122
  ephone-dn 3
-  number #$34T#33
+  number 5133
  ephone-dn 4
-  number #$34T#44
+  number 5144
  ephone-dn 5
-  number #$34T#55
+  number 5155
  ephone-dn 6
-  number #$34T#66
+  number 5166
  ephone-dn 7
-  number #$34T#77
+  number 5177
  ephone-dn 8
-  number #$34T#88
+  number 5188
  ephone-dn 9
-  number #$34T#99
+  number 5199
  ephone 1
   mac-address #ephone1macadd#
   type 8945
@@ -1410,9 +1410,9 @@ conf t
 config t
  dial-peer voice 69 voip
   service rivanaa out-bound
-  destination-pattern #$34T#69
-  session target ipv4:10.#$34T#.100.8
-  incoming called-number #$34T#69
+  destination-pattern 5169
+  session target ipv4:10.51.100.8
+  incoming called-number 5169
   dtmf-relay h245-alphanumeric
   codec g711ulaw
   no vad
@@ -1435,13 +1435,13 @@ config t
    param max-time-vm-retry 2
    param voice-mail 1234
    param max-time-call-retry 700
-   param aa-pilot #$34T#69
+   param aa-pilot 5169
   service rivanqueue flash:app-b-acd-3.0.0.2.tcl
    param queue-len 15
-   param aa-hunt1 #$34T#00
-   param aa-hunt2 #$34T#01
-   param aa-hunt3 #$34T#22
-   param aa-hunt4 #$34T#66
+   param aa-hunt1 5100
+   param aa-hunt2 5101
+   param aa-hunt3 5122
+   param aa-hunt4 5166
    param queue-manager-debugs 1
    param number-of-hunt-grps 4
    end
@@ -1490,7 +1490,7 @@ Review the jobs of a call manager:
 ~~~
 !@CUCM
 conf t
- hostname CUCM-#$34T#
+ hostname CUCM-51
  enable secret pass
  service password-encryption
  no logging console
@@ -1505,22 +1505,22 @@ conf t
   exec-timeout 0 0
  int fa 0/0
   no shut
-  ip add 10.#$34T#.100.8 255.255.255.0
+  ip add 10.51.100.8 255.255.255.0
  end
 
 !@alog & ephone
 conf t
  dial-peer voice 1 pots
-  destination-pattern #$34T#00
+  destination-pattern 5100
   port 0/0/0
  dial-peer voice 2 pots
-  destination-pattern #$34T#01
+  destination-pattern 5101
   port 0/0/1
  dial-peer voice 3 pots
-  destination-pattern #$34T#02
+  destination-pattern 5102
   port 0/0/2
  dial-peer voice 4 pots
-  destination-pattern #$34T#03
+  destination-pattern 5103
   port 0/0/3
  end
 
@@ -1531,26 +1531,26 @@ conf t
   no auto-reg-ephone
   max-ephones 5
   max-dn 20
-  ip source-address 10.#$34T#.100.8 port 2000
+  ip source-address 10.51.100.8 port 2000
   create cnf-files
  ephone-dn 1
-  number #$34T#11
+  number 5111
  ephone-dn 2
-  number #$34T#22
+  number 5122
  ephone-dn 3
-  number #$34T#33
+  number 5133
  ephone-dn 4
-  number #$34T#44
+  number 5144
  ephone-dn 5
-  number #$34T#55
+  number 5155
  ephone-dn 6
-  number #$34T#66
+  number 5166
  ephone-dn 7
-  number #$34T#77
+  number 5177
  ephone-dn 8
-  number #$34T#88
+  number 5188
  ephone-dn 9
-  number #$34T#99
+  number 5199
  ephone 1
   mac-address #ephone1macadd#
   type 8945
@@ -1655,9 +1655,9 @@ conf t
 config t
  dial-peer voice 69 voip
   service rivanaa out-bound
-  destination-pattern #$34T#69
-  session target ipv4:10.#$34T#.100.8
-  incoming called-number #$34T#69
+  destination-pattern 5169
+  session target ipv4:10.51.100.8
+  incoming called-number 5169
   dtmf-relay h245-alphanumeric
   codec g711ulaw
   no vad
@@ -1680,13 +1680,13 @@ config t
    param max-time-vm-retry 2
    param voice-mail 1234
    param max-time-call-retry 700
-   param aa-pilot #$34T#69
+   param aa-pilot 5169
   service rivanqueue flash:app-b-acd-3.0.0.2.tcl
    param queue-len 15
-   param aa-hunt1 #$34T#00
-   param aa-hunt2 #$34T#01
-   param aa-hunt3 #$34T#22
-   param aa-hunt4 #$34T#66
+   param aa-hunt1 5100
+   param aa-hunt2 5101
+   param aa-hunt3 5122
+   param aa-hunt4 5166
    param queue-manager-debugs 1
    param number-of-hunt-grps 4
    end
@@ -1709,7 +1709,7 @@ Is the device pingable?
 
 ~~~
 @cmd
-10.#$34T#.100.8
+10.51.100.8
 ~~~
 
 <br>
@@ -1774,7 +1774,7 @@ show cdp neighbor
 
 ### 🎯 Exercise 07: Review of First 5 (HESNo)
 Task:
- 1. Set the hostname to EDGE-#$34T#
+ 1. Set the hostname to EDGE-51
  2. Protect access to the global configuration mode using a password that is hashed with md5 encryption. 
     The password must be 'pass'
  3. Make sure any plain text passwords are encrypted in the configuration file.
@@ -1808,7 +1808,7 @@ conf t
 ~~~
 !@EDGE
 conf t
- hostname EDGE-#$34T#
+ hostname EDGE-51
  enable secret pass
  service password-encryption
  no logging cons
@@ -1934,7 +1934,7 @@ conf t
  ip route 10.82.0.0 255.255.0.0 200.0.0.82 254
  ip route 10.91.0.0 255.255.0.0 200.0.0.81 254
  ip route 10.92.0.0 255.255.0.0 200.0.0.82 254
- ip route 10.#$34T#.0.0 255.255.0.0 10.#$34T#.#$34T#.4 254
+ ip route 10.51.0.0 255.255.0.0 10.51.51.4 254
  end
 ~~~
 
@@ -1944,7 +1944,7 @@ conf t
 !@CUCM
 conf t
  ip routing
- ip route 0.0.0.0 0.0.0.0 10.#$34T#.100.4 254
+ ip route 0.0.0.0 0.0.0.0 10.51.100.4 254
  end
 ~~~
 
@@ -1953,7 +1953,7 @@ conf t
 ~~~
 !@CoreBABA
 conf t
- ip route 0.0.0.0 0.0.0.0 10.#$34T#.#$34T#.1 254
+ ip route 0.0.0.0 0.0.0.0 10.51.51.1 254
  end
 ~~~
 
@@ -1976,8 +1976,8 @@ show ip route
 
 ~~~
 !@cmd
-route add 10.0.0.0 mask 255.0.0.0 10.#$34T#.1.4
-route add 200.0.0.0 mask 255.255.255.0 10.#$34T#.1.4
+route add 10.0.0.0 mask 255.0.0.0 10.51.1.4
+route add 200.0.0.0 mask 255.255.255.0 10.51.1.4
 ~~~
 
 <br>
@@ -1993,10 +1993,10 @@ route add 200.0.0.0 mask 255.255.255.0 10.#$34T#.1.4
 !@edge
 conf t
 router ospf 1
-router-id #$34T#.0.0.1
+router-id 51.0.0.1
 network 200.0.0.0 0.0.0.255 area 0
-network 10.#$34T#.#$34T#.0 0.0.0.255 area 0
-network #$34T#.0.0.1 0.0.0.0 area 0
+network 10.51.51.0 0.0.0.255 area 0
+network 51.0.0.1 0.0.0.0 area 0
 int gi 0/0/0
 ip ospf network point-to-point
 end
@@ -2008,8 +2008,8 @@ end
 @coreBaba
 conf t
 router ospf 1
-router-id 10.#$34T#.#$34T#.4
-network 10.#$34T#.0.0 0.0.255.255 area 0
+router-id 10.51.51.4
+network 10.51.0.0 0.0.255.255 area 0
 int gi0/1
 ip ospf network point-to-point
 ~~~
@@ -2020,8 +2020,8 @@ ip ospf network point-to-point
 @cucm
 conf t
 router ospf 1
-router-id 10.#$34T#.100.8
-network 10.#$34T#.100.0 0.0.0.255 area 0
+router-id 10.51.100.8
+network 10.51.100.0 0.0.0.255 area 0
 end
 ~~~
 
@@ -2043,10 +2043,10 @@ Ping
 
 ~~~
 !@cmd
-ping 10.#$34T#.1.2                 CoreTAAS
-ping 10.#$34T#.1.4                 CoreBABA
-ping 10.#$34T#.100.8               CUCM
-ping 10.#$34T#.#$34T#.1            EDGE
+ping 10.51.1.2                 CoreTAAS
+ping 10.51.1.4                 CoreBABA
+ping 10.51.100.8               CUCM
+ping 10.51.51.1            EDGE
 ~~~
 
 <br>
@@ -2055,10 +2055,10 @@ Scan
 
 ~~~
 !@cmd
-nmap -v 10.#$34T#.1.2 
-nmap -v 10.#$34T#.1.4
-nmap -v 10.#$34T#.100.8
-nmap -v 10.#$34T#.#$34T#.1
+nmap -v 10.51.1.2 
+nmap -v 10.51.1.4
+nmap -v 10.51.100.8
+nmap -v 10.51.51.1
 ~~~
 
 <br>
