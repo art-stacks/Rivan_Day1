@@ -649,8 +649,8 @@ conf t
 
 !@edge
 conf t
- ip name-server 10.#$34T#.1.10
- ip domain lookup
+ ip name-server 10.#$34T#.1.10   !8.8.8.8 8.8.4.4
+ ip domain lookup source int g0/0/0
  end
 
 
@@ -711,6 +711,7 @@ conf t
  !
  no ip route 10.#$34T#.0.0 255.255.0.0 172.16.1.#$34T# 252
  end
+
 
 
 
