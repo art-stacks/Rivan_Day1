@@ -351,7 +351,7 @@ __Create a Custom User Agent__
 <br>
 
 __Add an Agent to the Work Order__  
-`Workorder` > 'History' > 'Show Workorder' > 'Add Agent'
+`Workorder` > `History` > `Show Workorder` > `Add Agent`
 
 <br>
 <br>
