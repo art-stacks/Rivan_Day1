@@ -181,7 +181,7 @@ __4. Add a hostname mapping.__
 Access the __hosts__ file located on `c:\Windows\System32\drivers\etc`  
 Then, enter add the following mapping to the hosts file:
 ~~~
-rivan.cloudsoc.com  208.8.8.144
+208.8.8.144  rivan.cloudsoc.com
 ~~~
 
 > [!Note]
