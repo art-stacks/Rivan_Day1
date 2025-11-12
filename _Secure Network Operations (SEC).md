@@ -345,6 +345,17 @@ conf t
 <br>
 <br>
 
+__Create a Custom User Agent__  
+`Admin` > `Agents` > `Add Agents`
+
+<br>
+
+__Add an Agent to the Work Order__  
+`Workorder` > 'History' > 'Show Workorder' > 'Add Agent'
+
+<br>
+<br>
+
 ---
 &nbsp;
 
