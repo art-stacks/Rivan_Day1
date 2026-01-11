@@ -723,7 +723,7 @@ Task:
 conf t
  ip dhcp excluded-address __.__.__.__  __.__.__.__
  ip dhcp pool ______
-  network 10.#$34T#.50.0 255.255.255.0
+  network 10.#$34T#.100.0 255.255.255.0
   default-______  ______
   ______  ______
   ______  
