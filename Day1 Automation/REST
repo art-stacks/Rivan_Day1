@@ -1,0 +1,34 @@
+~~~
+!@Cisco
+conf t
+ ip http server
+ ip http secure-server
+ ip http authentication local
+ username admin priv 15 secret pass
+ restconf
+ end
+~~~
+
+
+Decrypt TLS Traffic
+Environment Variables > New
+ Name: SSLKEYLOGFILE
+ Desc: File path
+
+or
+
+Wireshark
+
+Tools > TLS Keylog Launcher
+Log file: Desktop/SSLKEY.log
+Launcher: Firefox
+
+
+https://<router-ip>/restconf/data/
+
+curl -k -u admin:pass -H "Accept: application/yang-data+json" https://192.168.102.11/restconf/data/ietf-yang-library:modules-state -o modules.json
+curl -k -u admin:pass -H "Accept: application/yang-data+json" https://192.168.102.11/restconf/data/ietf-interfaces:interfaces -o interfaces.json
+
+Schema
+Interfaces
+Interface-state
