@@ -5,23 +5,8 @@
 # 👋 Welcome to Rivan
 *"There's no better teacher than experience"*
 
-
-&nbsp;
-## 📋 Prove what you are doing.
- - Create a Github account: https://github.com/
-
-<br>
-
-Import the repositories.
- - Rivan_Day1 : https://github.com/art-stacks/Rivan_Day1
- - SecPlus701 : https://github.com/rivancorp/SECplus701
- - RivanSecPlus701 : https://github.com/rivancorp/RivanSecPlus701
-
 <br>
 <br>
-
----
-&nbsp;
 
 ## 📂 Create your own folder in the desktop
 ~~~
@@ -40,123 +25,10 @@ dir
 
 # 🏦 Secure Enterprise Network Architecture
 
-![Day1](img/Day1_100.png)
-
 <br>
 <br>
 
----
-&nbsp;
-
-## 🧱 Hierarchical Network Design
-*What is the most important part of a network? __The Core__*
-
-<br>
-
-Most common kinds of network architectures.
- - 2-tier                 __Cisco Collapsed Campus Core__
- - 3-tier                 __Enterprise Network Design__
- - Spine-leaf             __Data Center Fabric__
-
-<br>
-
-CORE Layer (__CoreTAAS__ & __CoreBABA__) - High Speed and Availability
-  > [!NOTE]
-  >*"A Network Engineer MUST avoid a single point of failure.
-   __Always have a backup.__"*
-
-<br>
-
-Examples:
-  | __Protocol__                 | __Supported Devices__    |
-  | ---                          | ---                      |
-  | Etherchannel                 | Cisco Catalyst..and more |
-  | FlexStack (Master Switch)    | Cisco 2960 & 6500 Series |
-  | VSS (Single logical switch)  | NXOS 9k                  |
-  | SSO (Stateful Switchover)
-  | NSF (Non-stop Forwarding)
-
-<br>
-<br>
-
----
-&nbsp;
-
-## 🔌 Wired and wireless network.
-*How many devices do you have right now that can connect to the internet?*
-
-<br>
-
-> [!NOTE]
-> A network must be Flexible. Reliable. __AVAILABLE__.
-
-<br>
-
-### 📶 PLDT AP vs Wireless Controller & Autonomous AP
-
-<br>
-
-Wifi Mesh
- - Wired Backhaul
- - Wireless Backhaul
-
-<br>
-
-Wifi standards | [IEEE (Institute of Electrical and Electronics Engineers)](https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/)
-
-  - WiFi 6     IEEE 802.11ax
-  - WiFi 7     IEEE P802.11be
-
-<br>
-<br>
-
----
-&nbsp;
-
-## 🔍 Implement security solutions.
-*What is more valuable than gold? __Data__*
-
-<br>
-
-Network security infrastructure
- - NGFW, UTM, IDS
- - Security Policies
-     - Windows Local Security Policy
- - Surveillance
-     - IP Cameras (__CAM6__ & __CAM8__)
-
-<br>
-
-Made in US 🇺🇸 vs Made in China 🇨🇳
-
-<br>
-<br>
-
----
-&nbsp;
-
-# 🔧 Access the CLI
-*How can you tell if a device is expensive? It has a __Console Port__*
-
-<br>
-
-Serial Cable
-  - VGA, USB
-  - Ugreen
-
-<br>
-<br>
-
----
-&nbsp;
-
-# 📤 IT Service Management
-*If it is not documented, it never existed.*
-- ITSM
-- CMDB
-
-<br>
-
+## 📤 IT Service Management
 ### Lab Setup
 __1. Run the *SOC-IR* virtual machine.__  
 
@@ -371,7 +243,6 @@ __Add an Agent to the Work Order__
 
 ## Know the jobs of a Switch
 ### ⚙️ 1. __POE__
-*Are there switches that don't support POE? __Yes__.*
 > [!NOTE]
 > If you need PoE functionality on a non-PoE switch, use a PoE injector.
 
@@ -379,11 +250,13 @@ __Add an Agent to the Work Order__
 
 | IEEE Standards  | Power Output |
 | ---             |     ---      |
-| 802.3af (PoE)   |     15.4W    |
-| 802.3at (PoE+)  |     25.5W    |
-| 802.3bt (PoE++) |     71.3W    |
+| 802.3af (PoE)   |              |
+| 802.3at (PoE+)  |              |
+| 802.3bt (PoE++) |              |
 
-<br>
+&nbsp;
+---
+&nbsp;
 
 Which device consumes the most power? __SPI - `show power inline`__
 ~~~
@@ -405,7 +278,6 @@ show power inline
 &nbsp;
 
 ### ⚙️ 2. SVI (Switch Virtual Interface)
-*Why segment network traffic? __WireShark__*
 
 <br>
 
@@ -489,7 +361,6 @@ __BUT__
 &nbsp;
 
 ### 🔐 Confidentiality
-
 ### 5 Phases of Ethical Hacking
 __1. Reconnaissance - gather information.__
 
@@ -569,23 +440,6 @@ conf t
 
 <br>
 
-__Access Wireshark__
-
-<br>
-
-| Attempt    | Answer                          |
-| ---        | ---                             |
-| 1:Username | What did you eat last night?    | 
-| 2:Password | What is your favorite dessert?  |
-| ###        | ###                             |
-| 1:Username | What's the name of your school? |
-| 2:Password | What's your course in college?  |
-| ###        | ###                             |
-| 1:Username | admin                           |
-| 2:Password | pass                            |
-
-<br>
-
 __Implement Secure Protocols: SSH__
 
 | 🔑 | Public | Private | 🔑 |
@@ -614,12 +468,8 @@ conf t
 ### ✉️ Integrity
 ~~~
 !@cmd
-certutil -hashfile SERVER_EVAL_x64FRE_en-us.iso md5
+certutil -hashfile [FILE] sha256
 ~~~
-
-<br>
-
-Search on Google: `SERVER_EVAL_x64FRE_en-us.iso md5 hash`
 
 <br>
 <br>
@@ -927,23 +777,6 @@ Hack your LAN to better protect it.
 2. Login to the VM
 > Username: kali  
 > Password: kali  
-
-3. Run yersinia
-
-~~~
-@Kali
-sudo yersinia -G
-~~~
-
-<br>
-
-4. Perform various Attacks.
-
-Verify:
-~~~
-!@CoreBABA
-show process cpu | inc uti
-~~~
 
 <br>
 
@@ -1903,18 +1736,6 @@ copy run start
   | TenGigEthernet  |       |       |
 
 <br>
-
-  - RJ45 Jack
-  - SFP (Small Form-factor Pluggable)
-
-<br>
-
-  | Copper                                           | Single-mode fiber                    |
-  | ---                                              | ---                                  |
-  | Conductor, Bedding, Sheathing                    | Core, Cladding, Coating              |
-  | Affected by electrical and magnetic interference | Comprised of insulated glass strands |
-
-<br>
 <br>
 
 ---
@@ -1922,45 +1743,6 @@ copy run start
 
 ## 🔧 Configure EDGE
 ### 🏨 Establish connectivity to your enterprise.
-*How do you gain access to the internet?*
-
-&nbsp;
----
-&nbsp;
-
-*What is the maximum distance of a UTP cable? 100m?*
-
-Network Scopes
-  - 🏠 LAN                  Local Area Network
-  - 🌎 WAN                  Wide Area Network
-
-<br>
-
-PLDT Home vs PLDT Enterprise
-  - 🌃 MAN                  Metropolitan Area Network
-                         PLDT Enterprise Metro Ethernet
-
-<br>
-
-Transport technologies
-  - Leased Line
-  - SDWAN
-  - MPLS VPLS            (Pseudowire, L3 & L2)
-  - VPN                  (EVPN)
-
-<br>
-
-*Why PLDT?*
-  __Submarine Cable Map__
-
-*Why NOT PLDT?*
-  - Cabling
-  - [Service Reliability](https://www.pldthome.com/termsandconditions)
-
-&nbsp;
----
-&nbsp;
-
 *How to know if you are connected to PLDT? __SCN - `show cdp neighbor`__*
 
 ~~~
@@ -2163,7 +1945,7 @@ ping 10.#$34T#.#$34T#.1            EDGE
 <br>
 
 ## 🧱 Setup a Firewall (CSR1000v)
-   
+
 <br>
 
 __Ordinary Firewall vs NGFW__
