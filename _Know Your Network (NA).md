@@ -5,39 +5,8 @@
 # 👋 Welcome to Rivan
 *"There's no better teacher than experience"*
 
-
-&nbsp;
-## 💡 Approach to Network Programmability
-*"A new era for Cisco Certifications"*
-
-Cisco Certified Network Automation
-
-- Powershell, Bash
-- Python, Ruby, TCL
-- JSON, YAML
-- REST APIs
-- Ansible, Terraform, Chef, Puppet, etc.
-- Collaboration Platforms (GitHub)
-
 <br>
 <br>
-
----
-&nbsp;
-
-## 📋 Prove what you are doing.
- - Create a Github account: https://github.com/
- - Create a Postman account: https://www.postman.com/
-
-Import the repositories.
- - Rivan_Day1 : https://github.com/art-stacks/Rivan_Day1
- - RivanCorp_CCNA2 : https://github.com/rivancorp/ccna2
-
-<br>
-<br>
-
----
-&nbsp;
 
 ## 📂 Create your own folder in the desktop
 ~~~
@@ -54,243 +23,8 @@ dir
 
 # 💻 Build your network. 
 
-![Day1](img/Day1_100.png)
-
 <br>
 <br>
-
----
-&nbsp;
-
-## 🧱 Hierarchical Network Design
-  *What is the most important part of a network? __The Core__*
-
-<br>
-
-Most common kinds of network architectures.
- - 2-tier                 __Cisco Collapsed Campus Core__
- - 3-tier                 __Enterprise Network Design__
- - Spine-leaf             __Data Center Fabric__
-
-<br>
-
-CORE Layer (__CoreTAAS__ & __CoreBABA__) - High Speed and Availability
-  > [!NOTE]
-  >*"A Network Engineer MUST avoid a single point of failure.
-   __Always have a backup.__"*
-
-<br>
-
-Examples:
-  | __Protocol__                 | __Supported Devices__    |
-  | ---                          | ---                      |
-  | Etherchannel                 | Cisco Catalyst..and more |
-  | FlexStack (Master Switch)    | Cisco 2960 & 6500 Series |
-  | VSS (Single logical switch)  | NXOS 9k                  |
-  | SSO (Stateful Switchover)
-  | NSF (Non-stop Forwarding)
-
-<br>
-<br>
-
----
-&nbsp;
-
-## 🔌 Wired and wireless network.
-*How many devices do you have right now that can connect to the internet?*
-
-<br>
-
-> [!NOTE]
-> A network must be Flexible. Reliable. __AVAILABLE__.
-
-<br>
-
-### 📶 PLDT AP vs Wireless Controller & Autonomous AP
-
-<br>
-
-Wifi Mesh
- - Wired Backhaul
- - Wireless Backhaul
-
-<br>
-
-Wifi standards | [IEEE (Institute of Electrical and Electronics Engineers)](https://standards.ieee.org/beyond-standards/the-evolution-of-wi-fi-technology-and-standards/)
-
-  - WiFi 6     IEEE 802.11ax
-  - WiFi 7     IEEE P802.11be
-
-<br>
-<br>
-
----
-&nbsp;
-
-## 🔍 Implement security solutions.
-*What is more valuable than gold? __Data__*
-
-<br>
-
-Network security infrastructure
- - NGFW, UTM, IDS
- - Security Policies
-     - Windows Local Security Policy
- - Surveillance
-     - IP Cameras (__CAM6__ & __CAM8__)
-
-<br>
-
-Made in US 🇺🇸 vs Made in China 🇨🇳
-
-<br>
-<br>
-
----
-&nbsp;
-
-## 📠 Enterprise Communication
-*How often are meetings conducted in your work place?*
-
-<br>
-
-Cisco Unified Call Manager | [Unified Communications and Collaboration.](https://www.cisco.com/c/en/us/products/unified-communications/index.html)
-  - POTS (__Analog__)
-  - VOIP (__ePhone__)
-
-<br>
-<br>
-
----
-&nbsp;
-
-## 🌐 Internet Connectivity
-*When to use UTP and Fibre Optic*
-
-<br>
-
-[IEEE Ethernet Standards](https://www.ccnaacademy.com/2018/09/ieee-ethernet-standards_16.html)
-
-  | Name            | Speed   | F - IEEE - U |
-  | ---             |  ---    |  ---         |
-  | Ethernet        | 10Mbps  | 802.3i       |
-  | FastEthernet    | 100Mbps | 802.3u       |
-  | GigEthernet     | 1Gbps   | .3z / .3ab   |
-  | TenGigEthernet  | 10Gbps  | .ae / .an    |
-
-<br>
-
-  - RJ45 Jack
-  - SFP (Small Form-factor Pluggable)
-
-<br>
-
-  | Copper                                           | Single-mode fiber                    |
-  | ---                                              | ---                                  |
-  | Conductor, Bedding, Sheathing                    | Core, Cladding, Coating              |
-  | Affected by electrical and magnetic interference | Comprised of insulated glass strands |
-
-<br>
-<br>
-
-# 🔧 Configure the Network
-*How can you tell if a device is expensive? It has a __Console Port__*
-
-<br>
-
-Serial Cable
-  - VGA, USB
-  - Ugreen
-
-<br>
-
-## ⌨️ Master the Command Line Interface (CLI)
-*How to know if someone has less than 1 year experience?*
-
-<br>
-
-![CISCO CLI](img/CiscoCLI_100.png)
-
-<br>
-<br>
-
----
-&nbsp;
-
-~~~
-!@Switch
-conf t
- int fa0/1
-  exit
- int g0/1
-  exit
- line cons 0
-  exit
- router eigrp day1
-  a ipv4 u a 100
-   net 10.0.0.0
-   net 20.0.0.0
-   exit
-  exit
- exit
-!
-!
-conf t
- int fa0/1
-  shutdown
-  no shutdown
-  end
-~~~
-
-&nbsp;
----
-&nbsp;
-
-### 🎯 Exercise 01: Navigate through the CLI as fast as you can.
-~~~
-!@Switch
-conf t
- int fa0/1
-  shut
-  end
-conf t
- int fa0/1
-  no shut
-  end
-~~~
-
-<br>
-<br>
-
-
-### View then remove the configurations.
-Use the __`show run`__ command.
-~~~
-!@Switch
-show run
-~~~
-
-<br>
-
-Then, erase the configurations.
-~~~
-!@Switch
-conf t
- router eigrp day1
-  a ipv4 u a 100
-   no network 10.0.0.0
-   end
-   !
-!or
-!
-conf t
- no router eigrp day1
- end
-~~~
-
-<br>
-<br>
-
 
 ## 🔧 Configure CoreTAAS
 ### ⚙️ 1. Initial configurations
@@ -555,7 +289,6 @@ conf t
 Know the jobs of a Layer 3 Switch
 
 ### ⚙️ 1. __POE__
-*Are there switches that don't support POE? __Yes__. Buy one from [Temu](https://www.temu.com)*
 > [!NOTE]
 > If you need PoE functionality on a non-PoE switch, use a PoE injector.
 
@@ -563,9 +296,9 @@ Know the jobs of a Layer 3 Switch
 
 | IEEE Standards  | Power Output |
 | ---             |     ---      |
-| 802.3af (PoE)   |     15.4W    |
-| 802.3at (PoE+)  |     25.5W    |
-| 802.3bt (PoE++) |     71.3W    |
+| 802.3af (PoE)   |              |
+| 802.3at (PoE+)  |              |
+| 802.3bt (PoE++) |              |
 
 &nbsp;
 ---
@@ -866,7 +599,7 @@ conf t
 ### 🎯 Exercise 05: Place Cameras to their correct VLANs based on the topology.
 
 Task:
- 1. Create VLAN 50 and name it 'CCTVLAN'
+ 1. Create VLAN 50 and name it 'CCTVVLAN'
  2. Place IP cameras to their correct VLAN.
 
 ~~~
