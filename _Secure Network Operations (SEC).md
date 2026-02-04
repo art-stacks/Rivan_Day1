@@ -1958,6 +1958,42 @@ __Ordinary Firewall vs NGFW__
 - Intrusion Detection
 - Open Ports: HTTP, HTTPS, SSH, DNS
 
+<br>
+
+__Setup CSR1000v__
+
+~~~
+conf t
+ hostname FW-EDGE
+ enable secret pass
+ service password-encryption
+ no logging cons
+ no ip domain lookup
+ line vty 0 14
+  transport input all
+  password pass
+  login local
+  exec-timeout 0 0
+ int g1
+  ip add 208.8.8.11 255.255.255.0
+  no shut
+ int g2
+  ip add 192.168.102.11 255.255.255.0
+  no shut
+ int g3
+  ip add 192.168.103.11 255.255.255.0
+  no shut
+ !
+ username admin privilege 15 secret pass
+ ip http server
+ ip http secure-server
+ ip http authentication local
+ end
+wr
+~~~
+
+<br>
+<br>
 
 ### Wireless Deployment
 
