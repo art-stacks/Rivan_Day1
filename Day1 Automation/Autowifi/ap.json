@@ -1,0 +1,12 @@
+{
+    "aironet": {
+        "hostname": "aironet-69",
+        "ssid": "69-welcomeToRivan",
+        "auth-type": "open",
+        "key-man": "wpa",
+        "wifi-pass": "C1sc0123",
+        "channel": "9",
+        "encr-mod": "tkip",
+        "vlan": "69"
+    }
+} 

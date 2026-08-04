@@ -1,0 +1,59 @@
+device_info:
+    device_type: cisco_ios
+    ip: 10.m.1.4
+    port: 22
+    username: admin
+    password: pass
+    secret: pass
+
+ips:
+    password: pass
+    no_timeout: 0 0
+    svi:
+        v1: '1.4'
+        v10: '10.4'
+        v50: '50.4'
+        v100: '100.4'
+    cam_ip:
+        - '50.6'
+        - '50.8'
+    mask_24: '255.255.255.0'
+    wild_16: '0.0.255.255'
+    via_py: -configured-via-python
+
+dhcp:
+    save_first: '1'
+    save_last: '100'
+    dns: '1.10'
+    150_ip: '100.8'
+    pool: 
+        - pool_name: POOLDATA
+          domain: MGMTDATA.COM
+        - pool_name: POOLWIFI
+          domain: WIFIDATA.COM
+        - pool_name: POOLCCTV
+          domain: CCTVDATA.COM
+        - pool_name: POOLVOICE
+          domain: VOICEDATA.COM
+        - pool_name: CAMERA6
+        - pool_name: CAMERA8
+
+switchport:
+    vlan_names:
+        - MGMTVLAN
+        - WIFIVLAN
+        - CCTVVLAN
+    access:
+        fa0/2: access vlan 10
+        fa0/4: access vlan 10
+        fa0/6: access vlan 50
+        fa0/8: access vlan 50
+        fa0/5: access vlan 1
+        fa0/7: access vlan 1
+    voice:
+        fa0/5: voice vlan 100
+        fa0/7: voice vlan 100
+
+ospf:
+    process: '1'
+    area: area 0

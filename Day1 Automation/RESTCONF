@@ -1,0 +1,117 @@
+
+## SETUP
+Setup:  
+  - CSR1000v
+
+<br>
+
+### Run Servers and Edge Routers
+
+CSR1000v:
+  Name: UTM-PH
+  
+  | NetAdapter   |        |
+  | ---          | ---    |
+  | NetAdapter   | NAT    |
+  | NetAdapter 2 | VMNet2 |
+  | NetAdapter 3 | VMNet3 |
+
+
+&nbsp;
+---
+&nbsp;
+
+### Set IP address and Routing
+~~~
+!@UTM-PH
+conf t
+ hostname UTM-PH
+ enable secret pass
+ service password-encryption
+ no logging cons
+ no ip domain lookup
+ line vty 0 14
+  transport input all
+  password pass
+  login local
+  exec-timeout 0 0
+ int g1
+  ip add 208.8.8.11 255.255.255.0
+  no shut
+ int g2
+  ip add 192.168.102.11 255.255.255.0
+  no shut
+ int g3
+  ip add 11.11.11.113 255.255.255.224
+  no shut
+ !
+ username admin privilege 15 secret pass
+ ip http server
+ ip http secure-server
+ ip http authentication local
+ ip route 0.0.0.0 0.0.0.0 208.8.8.2
+ end
+wr
+!
+~~~
+
+
+<br>
+<br>
+
+---
+&nbsp;
+
+
+## RESTCONF
+*Net Config over HTTPS*
+
+~~~
+!@Cisco
+conf t
+ username admin priv 15 secret pass
+ ip http server
+ ip http secure-server
+ restconf
+ end
+~~~
+
+
+<br>
+
+
+### From Cisco Configuration File (CLI) to JSON
+~~~
+!@Telnet -p 80
+GET /index.html
+
+GET / HTTP/1.1
+Host: 192.168.102.11
+~~~
+
+
+<br>
+
+
+~~~
+!@cmd
+curl.exe -k -u admin:pass -H "Accept: application/yang-data+xml" https://192.168.102.11/restconf/data/ietf-interfaces:interfaces
+curl.exe -k -u admin:pass -H "Accept: application/yang-data+json" https://192.168.102.11/restconf/data/ietf-interfaces:interfaces
+
+
+curl.exe -k -u admin:pass -H "Accept: application/yang-data+json" https://192.168.102.11/restconf/data/ietf-yang-library:modules-state -o modules.json
+~~~
+
+
+<br>
+
+
+__ietf-interfaces__
+~~~
+!@cmd
+curl.exe -k -u admin:pass -H "Accept: application/yang-data+json" https://192.168.102.11:443/restconf/tailf/modules/ietf-interfaces/2014-05-08 -o int.yang
+~~~
+
+
+
+

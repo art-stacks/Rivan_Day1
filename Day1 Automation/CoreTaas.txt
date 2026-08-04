@@ -1,0 +1,32 @@
+!@coreTaas
+conf t
+ hostname coreTaas-#$34T#
+ enable secret pass
+ service password-encryption
+ no logging console
+ no ip domain-lookup
+ line cons 0
+  password pass
+  login
+  exec-timeout 0 0
+ line vty 0 14
+  password pass
+  login
+  exec-timeout 0 0
+ int vlan 1
+  no shut
+  ip add 10.#$34T#.1.2 255.255.255.0
+  desc DEFAULT-VLAN
+ int vlan 10
+  no shut
+  ip add 10.#$34T#.10.2 255.255.255.0
+  desc WIFI-VLAN
+ int vlan 50
+  no shut
+  ip add 10.#$34T#.50.2 255.255.255.0
+  desc CCTV-VLAN
+ int vlan 100
+  no shut
+  ip add 10.#$34T#.100.2 255.255.255.0
+  desc VOICE-VLAN
+ end

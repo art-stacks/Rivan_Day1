@@ -1,0 +1,22 @@
+{
+    "monitor_number": "#$34T#",
+    
+    "device_config": {
+        "hostname": "CoreTaas-#$34T#",
+        "address": {
+            "vlan_70": {
+                "ipv4": "10.#$34T#.70.2",
+                "desc": "BLUETEAM"
+            },
+            "vlan_71": {
+                "ipv4": "10.#$34T#.71.2",
+                "desc": "REDTEAM"
+            },
+            "vlan_72": {
+                "ipv4": "10.#$34T#.72.2",
+                "desc": "AUDIT"
+            }
+        },
+        "mask_24": "255.255.255.0"
+    }
+}

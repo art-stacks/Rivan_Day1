@@ -1,0 +1,22 @@
+{
+    "device_info": {
+        "device_type": "cisco_ios",
+        "ip": "10.m.1.2",
+        "port": 22,
+        "username": "admin",
+        "password": "pass",
+        "secret": "pass"
+    },
+
+    "ips": {
+        "password": "pass",
+        "no_timeout": "0 0",
+        "svi": {
+            "v10": "10.2",
+            "v50": "50.2",
+            "v100": "100.2"
+        },
+        "mask_24": "255.255.255.0",
+        "via_py": "-configured-via-python"
+    }
+}

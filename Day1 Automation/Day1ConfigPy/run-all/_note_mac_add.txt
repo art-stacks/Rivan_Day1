@@ -1,0 +1,8 @@
+@coreBaba
+sh mac address-table
+
+****************
+Camera 6 MAC Address (fa0/6):   replaceMe
+Camera 8 MAC Address (fa0/8):   replaceMe
+Ephone 1 MAC Address (fa0/5):   replaceMe
+Ephone 2 MAC Address (fa0/7):   replaceMe

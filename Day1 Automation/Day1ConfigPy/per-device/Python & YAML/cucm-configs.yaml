@@ -1,0 +1,76 @@
+active_monitors: 11,12,21,22,31,32,41,42,51,52,61,62,71,72,81,82
+
+device_info: 
+    device_type: cisco_ios
+    ip: 10.m.100.8
+    port: 22
+    username: admin
+    password: pass
+    secret: pass
+
+ips:
+    password: pass
+    no_timeout: 0 0
+    mask_24: '255.255.255.0'
+    wild_24: '0.0.0.255'
+
+analog: 
+    peer_1: 
+        voice: '1'
+        des_pat: '00'
+        port: 0/0/0
+    peer_2: 
+        voice: '2'
+        des_pat: '01'
+        port: 0/0/1
+    peer_3: 
+        voice: '3'
+        des_pat: '02'
+        port: 0/0/2
+    peer_4: 
+        voice: '4'
+        des_pat: '03'
+        port: 0/0/3
+
+telephony: 
+    tftp_ip: '100.8'
+    voice_port: '2000'
+    ephone_type: '8945'
+    btn_layout: 
+        ephone_1: 1:1 2:2 3:3 4:4
+        ephone_2: 1:5 2:6 3:7 4:8
+    dn_1: 
+        temp: '1'
+        dn: '11'
+    dn_2: 
+        temp: '2'
+        dn: '22'
+    dn_3: 
+        temp: '3'
+        dn: '33'
+    dn_4: 
+        temp: '4'
+        dn: '44'
+    dn_5: 
+        temp: '5'
+        dn: '55'
+    dn_6: 
+        temp: '6'
+        dn: '66'
+    dn_7: 
+        temp: '7'
+        dn: '77'
+    dn_8: 
+        temp: '8'
+        dn: '88'
+
+ivrs: 
+    des_pat: '69'
+    hunt_1: '00'
+    hunt_2: '01'
+    hunt_3: '77'
+    hunt_4: '33'
+
+ospf: 
+    process: '1'
+    area: area 0
