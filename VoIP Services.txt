@@ -1,0 +1,90 @@
+
+Your Monitor Number = #$34T#
+
+
+
+************** VOIP Services **************
+
+
+!@CUCM - Session Initiation Protocol
+conf t
+ voice service voip
+  allow-connections h323 to sip
+          
+  allow-connections sip to h323
+  allow-connections sip to sip
+  supplementary-service h450.12
+ sip
+   bind control source-interface fa0/0
+   bind media source-interface fa0/0
+   registrar server expires max 600 min 60
+ voice register global
+  mode cme
+  source-address 10.#$34T#.100.1 port 5060
+  max-dn 12
+  max-pool 12
+  authenticate register
+  create profile sync syncinfo.xml
+ voice register dn 1
+   number #$34T#23
+   allow watch
+   name #$34T#23
+ voice register dn 2
+   number #$34T#24
+   allow watch
+   name #$34T#24
+  voice register pool 1
+    id mac #mym0bilemac#
+    number 1 dn 1
+    dtmf-relay sip-notify
+    username #$34T#23 password #$34T#23
+    codec g711ulaw
+  voice register pool 2
+    id mac #othm0bilemac#
+    number 1 dn 2
+    dtmf-relay sip-notify
+    username #$34T#32 password #$34T#32
+    codec g711ulaw
+	end
+	
+	
+
+!@CUCM - Interactive Voice Response System
+config t
+dial-peer voice 69 voip
+ service rivanaa out-bound
+ destination-pattern #$34T#69
+ session target ipv4:10.#$34T#.100.1
+ incoming called-number #$34T#69
+ dtmf-relay h245-alphanumeric
+ codec g711ulaw
+ no vad
+!
+telephony-service
+ moh "flash:/en_bacd_music_on_hold.au"
+!
+application
+ service rivanaa flash:app-b-acd-aa-3.0.0.2.tcl
+  paramspace english index 1        
+  param number-of-hunt-grps 2
+  param dial-by-extension-option 8
+  param handoff-string rivanaa
+  param welcome-prompt flash:en_bacd_welcome.au
+  paramspace english language en
+  param call-retry-timer 15
+  param service-name rivanqueue
+  paramspace english location flash:
+  param second-greeting-time 60
+  param max-time-vm-retry 2
+  param voice-mail 1234
+  param max-time-call-retry 700
+  param aa-pilot #$34T#69
+ service rivanqueue flash:app-b-acd-3.0.0.2.tcl
+  param queue-len 15
+  param aa-hunt1 #$34T#00
+  param aa-hunt2 #$34T#77
+  param aa-hunt3 #$34T#01
+  param aa-hunt4 #$34T#33
+  param queue-manager-debugs 1
+  param number-of-hunt-grps 4
+  end
